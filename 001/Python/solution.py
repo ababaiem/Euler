@@ -1,7 +1,13 @@
 
 def resolve() -> int:
 
-    return sum(i for i in range(1, 1000) if i % 3 == 0 or i % 5 == 0)
+    predicate = lambda i: i % 3 == 0 or i % 5 == 0
+
+    naturals = range(1, 1000)
+
+    multiples = filter(predicate, naturals)
+
+    return sum(multiples)
 
 
 if __name__ == "__main__":
